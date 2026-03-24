@@ -12,15 +12,19 @@ class Traffic:
     def __init__(self):
         self.traffic = []
     def create_car(self):
-        new_car = Turtle()
-        new_car.shape(DEFAULT_SHAPE)
-        new_car.shapesize(stretch_wid=1, stretch_len=2)
-        new_car.penup()
-        new_car.color(random.choice(RANDOM_COLORS))
-        # set the car heading WEST
-        new_car.setheading(DEFAULT_SET_HEADING)
-        new_car.setposition(DEFAULT_CAR_STARTING_X_COORDINATE, random.randrange(-230, 230, 40))
-        self.traffic.append(new_car)
+        # Randomize die throw to only generate a car on a roll of 6 in order to
+        # limit the screen with too many cars being generated
+        die_throw = random.randrange(0, 6)
+        if die_throw == 6:
+            new_car = Turtle()
+            new_car.shape(DEFAULT_SHAPE)
+            new_car.shapesize(stretch_wid=1, stretch_len=2)
+            new_car.penup()
+            new_car.color(random.choice(RANDOM_COLORS))
+            # set the car heading WEST
+            new_car.setheading(DEFAULT_SET_HEADING)
+            new_car.setposition(DEFAULT_CAR_STARTING_X_COORDINATE, random.randrange(-230, 230, 40))
+            self.traffic.append(new_car)
     def auto_move(self):
         for each_car in self.traffic:
             each_car.forward(DEFAULT_MOVE_DISTANCE)
