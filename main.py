@@ -1,16 +1,18 @@
 from turtle import Screen
 import time
-from typing import List
-
 from frog import Frog
 from level import Level
 from car import Car
-
+# CONSTANTS
+DEFAULT_SCREEN_WIDTH = 600
+DEFAULT_SCREEN_HEIGHT = 600
+DEFAULT_SCREEN_COLOR = "white"
+DEFAULT_SCREEN_TITLE = "Frogger"
 # Initialize Screen Object
 screen = Screen()
-screen.setup(width=600, height=600)
-screen.bgcolor("white")
-screen.title("Frogger")
+screen.setup(DEFAULT_SCREEN_WIDTH, DEFAULT_SCREEN_HEIGHT)
+screen.bgcolor(DEFAULT_SCREEN_COLOR)
+screen.title(DEFAULT_SCREEN_TITLE)
 screen.tracer(0)
 
 # Initialize Frog Character

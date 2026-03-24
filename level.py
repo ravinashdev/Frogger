@@ -2,6 +2,7 @@ from turtle import Turtle
 MOVE = False
 ALIGN = "center"
 FONT = ("Courier", 24, "bold")
+DEFAULT_LEVEL_POSITION = (-230, 250)
 
 class Level(Turtle):
     def __init__(self):
@@ -10,7 +11,7 @@ class Level(Turtle):
         self.color("black")
         self.penup()
         self.hideturtle()
-        self.setposition(-230,250)
+        self.setposition(DEFAULT_LEVEL_POSITION)
     def write_level(self):
         # Write the level on the top left of the screen
         self.write(f"Level:{self.level}", align=ALIGN, font=FONT)
