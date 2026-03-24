@@ -39,7 +39,13 @@ game_on = True
 while game_on:
     screen.update()
     time.sleep(0.2)
+    # Create cars randomly on screen to make traffic and have it move automatically
     traffic.create_car()
     traffic.auto_move()
+    # Detect if frog hits any cars
+    for each_car in traffic.traffic:
+        if frog.distance(each_car) < 20:
+            game_on = False
+            level.game_over()
 # Screen exit on click
 screen.exitonclick()
