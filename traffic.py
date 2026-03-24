@@ -3,7 +3,6 @@ from turtle import Turtle
 import random
 # CONSTANTS
 DEFAULT_MOVE_DISTANCE = 10
-# RANDOM_Y_COORDINATES = [-230, -210, -190, -170, -150, -130, -110, ]
 RANDOM_COLORS = ["red", "green", "blue", "yellow", "cyan", "magenta"]
 DEFAULT_SHAPE = "square"
 DEFAULT_CAR_STARTING_X_COORDINATE = 300
