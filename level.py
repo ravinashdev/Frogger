@@ -4,7 +4,7 @@ from turtle import Turtle
 MOVE = False
 ALIGN = "center"
 FONT = ("Courier", 24, "bold")
-DEFAULT_LEVEL_POSITION = (-230, 250)
+DEFAULT_LEVEL_POSITION = (-230, 260)
 
 class Level(Turtle):
     def __init__(self):

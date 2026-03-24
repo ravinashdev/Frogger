@@ -2,8 +2,10 @@
 from turtle import Screen
 import time
 from frog import Frog
+from lane import Lane
 from level import Level
 from traffic import Traffic
+from lane import Lane
 # CONSTANTS
 DEFAULT_SCREEN_WIDTH = 600
 DEFAULT_SCREEN_HEIGHT = 600
@@ -26,6 +28,9 @@ level.write_level()
 
 # Initialize Traffic
 traffic = Traffic()
+
+# Initialize Lanes
+lane = Lane(DEFAULT_SCREEN_WIDTH, DEFAULT_SCREEN_HEIGHT)
 # # Listen for key events to invoke methods to change direction
 screen.listen()
 screen.onkey(frog.up_move, "Up")
@@ -47,7 +52,7 @@ while game_on:
         if frog.distance(each_car) < 20:
             game_on = False
             level.game_over()
-    if frog.ycor() > 230:
+    if frog.ycor() > 250:
         level.increase_level()
         level.write_level()
         frog.reset_position()
