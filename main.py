@@ -33,8 +33,9 @@ game_on = True
 traffic = []
 while game_on:
     screen.update()
-    time.sleep(0.5)
+    time.sleep(0.1)
     car = Car()
+    traffic.append(car)
     for each_car in traffic:
         each_car.auto_move()
 
