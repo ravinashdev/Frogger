@@ -3,7 +3,7 @@ from turtle import Screen
 import time
 from frog import Frog
 from level import Level
-from car import Car
+from traffic import Traffic
 # CONSTANTS
 DEFAULT_SCREEN_WIDTH = 600
 DEFAULT_SCREEN_HEIGHT = 600
@@ -24,6 +24,8 @@ frog = Frog()
 level = Level()
 level.write_level()
 
+# Initialize Traffic
+traffic = Traffic()
 # # Listen for key events to invoke methods to change direction
 screen.listen()
 screen.onkey(frog.up_move, "Up")
@@ -33,16 +35,11 @@ screen.onkey(frog.left_move, "Left")
 
 # Initialize Game
 game_on = True
-# Create traffic list add cars to it
-traffic = []
+
 while game_on:
     screen.update()
     time.sleep(0.2)
-    # Add cars to traffic list
-    car = Car()
-    traffic.append(car)
-    for each_car in traffic:
-        each_car.auto_move()
-
+    traffic.create_car()
+    traffic.auto_move()
 # Screen exit on click
 screen.exitonclick()
