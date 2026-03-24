@@ -1,6 +1,7 @@
 from turtle import Screen
 import time
 from frog import Frog
+from level import Level
 
 # Initialize Screen Object
 screen = Screen()
@@ -11,6 +12,9 @@ screen.tracer(0)
 
 # Initialize Frog Character
 frog = Frog()
+# Initialize Level Board
+level = Level()
+level.write_level()
 
 # # Listen for key events to invoke methods to change direction
 screen.listen()
