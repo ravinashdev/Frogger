@@ -1,16 +1,29 @@
-# This is a sample Python script.
+from turtle import Screen
+import time
+from frog import Frog
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# Initialize Screen Object
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("white")
+screen.title("Frogger")
+screen.tracer(0)
 
+# Initialize Frog Character
+frog = Frog()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+# # Listen for key events to invoke methods to change direction
+screen.listen()
+screen.onkey(frog.up_move, "Up")
+screen.onkey(frog.down_move, "Down")
+screen.onkey(frog.right_move, "Right")
+screen.onkey(frog.left_move, "Left")
 
+# Initialize Game
+game_on = True
+while game_on:
+    screen.update()
+    time.sleep(0.1)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Screen exit on click
+screen.exitonclick()
