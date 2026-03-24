@@ -12,7 +12,7 @@ DEFAULT_CAR_SPEED = 1
 class Traffic:
     def __init__(self):
         self.traffic = []
-        self.speed =
+        self.speed = 1
     def create_car(self):
         # Randomize die throw to only generate a car on a roll of 6 in order to
         # limit the screen with too many cars being generated
