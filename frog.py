@@ -26,3 +26,5 @@ class Frog(Turtle):
     def left_move(self):
         new_x_coordinate = self.xcor() - DEFAULT_MOVE_DISTANCE
         self.setposition(new_x_coordinate, self.ycor())
+    def reset_position(self):
+        self.setposition(INITIAL_POSITION)

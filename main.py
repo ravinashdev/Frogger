@@ -47,5 +47,10 @@ while game_on:
         if frog.distance(each_car) < 20:
             game_on = False
             level.game_over()
+    if frog.ycor() > 230:
+        level.increase_level()
+        level.write_level()
+        frog.reset_position()
+        traffic.increase_speed()
 # Screen exit on click
 screen.exitonclick()
