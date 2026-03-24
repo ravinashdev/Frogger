@@ -1,4 +1,6 @@
+# IMPORTS
 from turtle import Turtle
+# CONSTANTS
 MOVE = False
 ALIGN = "center"
 FONT = ("Courier", 24, "bold")

@@ -1,3 +1,4 @@
+# IMPORTS
 from turtle import Screen
 import time
 from frog import Frog
@@ -8,6 +9,7 @@ DEFAULT_SCREEN_WIDTH = 600
 DEFAULT_SCREEN_HEIGHT = 600
 DEFAULT_SCREEN_COLOR = "white"
 DEFAULT_SCREEN_TITLE = "Frogger"
+
 # Initialize Screen Object
 screen = Screen()
 screen.setup(DEFAULT_SCREEN_WIDTH, DEFAULT_SCREEN_HEIGHT)
@@ -31,11 +33,12 @@ screen.onkey(frog.left_move, "Left")
 
 # Initialize Game
 game_on = True
-# Create Traffic List
+# Create traffic list add cars to it
 traffic = []
 while game_on:
     screen.update()
     time.sleep(0.2)
+    # Add cars to traffic list
     car = Car()
     traffic.append(car)
     for each_car in traffic:

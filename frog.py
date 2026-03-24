@@ -1,5 +1,6 @@
+# IMPORTS
 from turtle import Turtle
-# Frog starting position as a constant
+# CONSTANTS
 INITIAL_POSITION = (0, -280)
 DEFAULT_HEADING = 90
 DEFAULT_SHAPE = "turtle"
@@ -12,7 +13,7 @@ class Frog(Turtle):
         self.penup()
         self.setheading(DEFAULT_HEADING)
         self.setposition(INITIAL_POSITION)
-    # Frog can. move in any 2D direction
+    # Frog can move in any direction 20 pixels
     def up_move(self):
         new_y_coordinate = self.ycor() + DEFAULT_MOVE_DISTANCE
         self.setposition(self.xcor(), new_y_coordinate)
