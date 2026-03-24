@@ -1,7 +1,10 @@
 from turtle import Screen
 import time
+from typing import List
+
 from frog import Frog
 from level import Level
+from car import Car
 
 # Initialize Screen Object
 screen = Screen()
@@ -12,6 +15,7 @@ screen.tracer(0)
 
 # Initialize Frog Character
 frog = Frog()
+
 # Initialize Level Board
 level = Level()
 level.write_level()
@@ -25,9 +29,14 @@ screen.onkey(frog.left_move, "Left")
 
 # Initialize Game
 game_on = True
+# Create Traffic List
+traffic = []
 while game_on:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(0.5)
+    car = Car()
+    for each_car in traffic:
+        each_car.auto_move()
 
 # Screen exit on click
 screen.exitonclick()
