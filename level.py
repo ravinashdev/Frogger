@@ -22,3 +22,9 @@ class Level(Turtle):
         self.level += 1
         # Clear the screen
         self.clear()
+    def game_over(self):
+        # Write Game Over when frog gets hit by traffic
+        self.clear()
+        message = f"Game Over!"
+        self.setposition(0,0)
+        self.write(message, MOVE, ALIGN, font=("Courier", 32, "bold"))
