@@ -9,7 +9,7 @@ DEFAULT_SHAPE = "square"
 DEFAULT_CAR_STARTING_X_COORDINATE = 280
 DEFAULT_SET_HEADING = 180
 
-class Car(Turtle):
+class Traffic(Turtle):
     def __init__(self):
         super().__init__()
         self.create_car()
