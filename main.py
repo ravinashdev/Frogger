@@ -11,7 +11,6 @@ DEFAULT_SCREEN_WIDTH = 600
 DEFAULT_SCREEN_HEIGHT = 600
 DEFAULT_SCREEN_COLOR = "white"
 DEFAULT_SCREEN_TITLE = "Frogger"
-
 # Initialize Screen Object
 screen = Screen()
 screen.setup(DEFAULT_SCREEN_WIDTH, DEFAULT_SCREEN_HEIGHT)
@@ -40,10 +39,11 @@ screen.onkey(frog.left_move, "Left")
 
 # Initialize Game
 game_on = True
-
+# Set initial sleep time to increase speed as levels increase
+default_sleep_time = 0.1
 while game_on:
     screen.update()
-    time.sleep(0.2)
+    time.sleep(default_sleep_time)
     # Create cars randomly on screen to make traffic and have it move automatically
     traffic.create_car()
     traffic.auto_move()
@@ -52,10 +52,15 @@ while game_on:
         if frog.distance(each_car) < 20:
             game_on = False
             level.game_over()
+    # When frog passes the finish line (250 px threshold)
+    # 1) Increase the level by +1
+    # 2) Write to screen
+    # 3) Reset frog to initial starting position using the reset_position method
+    # 4) Set a new default_sleep_time by dividing it by 1.1 and setting it to the new default_sleep_time
     if frog.ycor() > 250:
         level.increase_level()
         level.write_level()
         frog.reset_position()
-        traffic.increase_speed()
+        default_sleep_time = (default_sleep_time/1.1)
 # Screen exit on click
 screen.exitonclick()

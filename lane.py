@@ -9,6 +9,7 @@ class Lane(Turtle):
         super().__init__()
         self.screen_width = default_screen_width
         self.screen_height = default_screen_height
+        self.color("green")
         self.speed(0)
         self.setheading(DEFAULT_SET_HEADING)
         self.hideturtle()

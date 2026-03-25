@@ -32,7 +32,3 @@ class Traffic:
     def auto_move(self):
         for each_car in self.traffic:
             each_car.forward(DEFAULT_MOVE_DISTANCE)
-    def increase_speed(self):
-        new_speed = DEFAULT_CAR_SPEED + 1
-        for each_car in self.traffic:
-            each_car.speed(new_speed)

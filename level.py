@@ -16,7 +16,7 @@ class Level(Turtle):
         self.setposition(DEFAULT_LEVEL_POSITION)
     def write_level(self):
         # Write the level on the top left of the screen
-        self.write(f"Level:{self.level}", align=ALIGN, font=FONT)
+        self.write(f"LEVEL:{self.level}", align=ALIGN, font=FONT)
     def increase_level(self):
         # Increase the level every time traffic is passed
         self.level += 1
