@@ -9,7 +9,6 @@ class Lane(Turtle):
         super().__init__()
         self.screen_width = default_screen_width
         self.screen_height = default_screen_height
-        self.color("green")
         self.speed(0)
         self.setheading(DEFAULT_SET_HEADING)
         self.hideturtle()
@@ -22,6 +21,7 @@ class Lane(Turtle):
         top_y_coordinate = (self.screen_height - 100)/2
         top_x_coordinate = self.screen_width/2
         self.setposition(top_x_coordinate, top_y_coordinate)
+        self.color('green')
         for i in range(0, self.screen_width,100):
             self.pendown()
             self.forward(50)
@@ -31,6 +31,7 @@ class Lane(Turtle):
         bottom_y_coordinate = -1*(self.screen_height - 100)/2
         bottom_x_coordinate = self.screen_width/2
         self.setposition(bottom_x_coordinate, bottom_y_coordinate)
+        self.color('red')
         for i in range(0, self.screen_width,100):
             self.pendown()
             self.forward(50)

@@ -61,6 +61,6 @@ while game_on:
         level.increase_level()
         level.write_level()
         frog.reset_position()
-        default_sleep_time = (default_sleep_time/1.1)
+        default_sleep_time = (default_sleep_time/1.5)
 # Screen exit on click
 screen.exitonclick()
